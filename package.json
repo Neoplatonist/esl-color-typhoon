@@ -1,0 +1,64 @@
+{
+  "name": "color-typhoon-game",
+  "version": "2.0.0",
+  "description": "An interactive educational color and points card game built with modern JavaScript",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "start": "pnpm dlx serve . -l 8080",
+    "dev": "pnpm dlx serve . -l 3000",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src/ tests/ --ext .js",
+    "lint:fix": "eslint src/ tests/ --ext .js --fix",
+    "format": "echo \"Formatting with Prettier to be implemented\" && exit 0",
+    "validate": "pnpm run lint && pnpm run test",
+    "build": "echo \"No build process needed - uses native ES6 modules\" && exit 0",
+    "docker:build": "docker build -t color-typhoon-game .",
+    "docker:run": "docker run -p 8080:80 color-typhoon-game",
+    "docker:compose": "docker-compose up --build"
+  },
+  "keywords": [
+    "game",
+    "educational",
+    "javascript",
+    "es6-modules",
+    "cards",
+    "interactive",
+    "accessibility",
+    "responsive"
+  ],
+  "author": "Production Engineering Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/USER/REPO.git"
+  },
+  "bugs": {
+    "url": "https://github.com/USER/REPO/issues"
+  },
+  "homepage": "https://github.com/USER/REPO#readme",
+  "devDependencies": {
+    "@babel/core": "^7.25.9",
+    "@babel/preset-env": "^7.25.9",
+    "@types/jest": "^29.5.14",
+    "babel-jest": "^29.7.0",
+    "eslint": "^8.57.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jsdom": "^25.0.1",
+    "serve": "^14.2.4"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.15.0",
+  "browserslist": [
+    "Chrome >= 88",
+    "Firefox >= 85",
+    "Safari >= 14",
+    "Edge >= 88"
+  ]
+}

@@ -3,32 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Color Typhoon Game - An interactive educational game with color cards and points"
+    />
+    <meta name="author" content="Production Engineering Team" />
+
     <title>Color Typhoon Game</title>
-    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="./src/styles/main.css" as="style" />
+    <link rel="preload" href="./src/app.js" as="script" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./src/styles/main.css" />
+
+    <!-- Favicon (optional) -->
+    <!-- <link rel="icon" href="./favicon.ico" type="image/x-icon"> -->
   </head>
   <body>
     <div class="container">
-      <h1>Color Typhoon Game</h1>
+      <header>
+        <h1>Color Typhoon Game</h1>
+      </header>
 
-      <div class="buttons">
-        <button id="randomize-btn">Randomize</button>
-        <button id="flip-all-btn">Show Points</button>
-        <div class="toggle-switch-container">
-          <label for="toggle-names-switch" class="toggle-label"
-            >Color Names</label
+      <main>
+        <div class="buttons">
+          <button
+            id="randomize-btn"
+            type="button"
+            aria-label="Randomize all cards with new colors and points"
           >
-          <label class="switch">
-            <input type="checkbox" id="toggle-names-switch" checked />
-            <span class="slider round"></span>
-          </label>
-        </div>
-      </div>
+            Randomize
+          </button>
 
-      <div class="card-grid" id="card-grid">
-        <!-- Cards will be generated here via JavaScript -->
-      </div>
+          <button
+            id="flip-all-btn"
+            type="button"
+            aria-label="Flip all cards to show point values"
+          >
+            Show Points
+          </button>
+
+          <div class="toggle-switch-container">
+            <label for="toggle-names-switch" class="toggle-label">
+              Color Names
+            </label>
+            <label class="switch">
+              <input type="checkbox" id="toggle-names-switch" checked />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+
+        <div
+          class="card-grid"
+          id="card-grid"
+          role="grid"
+          aria-label="Color and point cards"
+        >
+          <!-- Cards will be dynamically generated here -->
+        </div>
+      </main>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Application JavaScript (ES6 modules) -->
+    <script type="module" src="./src/app.js"></script>
+
+    <!-- Fallback for older browsers -->
+    <noscript>
+      <p>
+        This game requires JavaScript to function. Please enable JavaScript in
+        your browser.
+      </p>
+    </noscript>
   </body>
 </html>

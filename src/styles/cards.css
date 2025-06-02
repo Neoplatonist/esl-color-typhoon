@@ -1,0 +1,155 @@
+/**
+ * Card Styles - Game card component styles
+ */
+
+/* Card base - square aspect ratio */
+.card {
+  /* Let grid handle width - height matches width automatically */
+  aspect-ratio: 1;
+  position: relative;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Improved hover effect */
+.card:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Card 3D container */
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+/* Flip animation */
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Card faces */
+.card-front,
+.card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background: white;
+  color: #333;
+  font-size: 26px;
+  font-weight: bold;
+  border: 2px solid #ddd;
+}
+
+.card-front {
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 26px;
+  margin: 0; /* Remove margins for proper centering */
+  transition: opacity 0.3s ease;
+}
+
+.points {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* Hide names functionality */
+.hide-names .card-title {
+  opacity: 0;
+}
+
+/* Special styling for light colored cards */
+.card-front[style*="background-color: #FFFFFF"],
+.card-front[style*="background-color: #FFFF00"],
+.card-front[style*="background-color: #FFC0CB"] {
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  color: #333;
+  text-shadow: none;
+}
+
+/* Responsive typography - device-optimized */
+@media (max-width: 480px) {
+  .card-title {
+    font-size: 16px;
+    margin: 0; /* Keep centered */
+  }
+
+  .points {
+    font-size: 20px;
+  }
+
+  .card-back {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .card-title {
+    font-size: 18px;
+    margin: 0; /* Keep centered */
+  }
+
+  .points {
+    font-size: 22px;
+  }
+
+  .card-back {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1366px) {
+  /* iPad/Tablet (including iPad Pro 13") - much bigger text for much bigger cards */
+  .card-title {
+    font-size: 28px;
+    margin: 0; /* Keep centered */
+  }
+
+  .points {
+    font-size: 34px;
+  }
+
+  .card-back {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1367px) {
+  /* Large desktop - bigger text for bigger cards */
+  .card-title {
+    font-size: 22px;
+    margin: 0; /* Keep centered */
+  }
+
+  .points {
+    font-size: 28px;
+  }
+
+  .card-back {
+    font-size: 22px;
+  }
+}

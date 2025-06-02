@@ -1,0 +1,85 @@
+/**
+ * Layout Styles - Container and layout components
+ */
+
+/* Container - accommodates bigger iPad cards */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Main layout - ensure vertical stacking */
+main {
+  display: block;
+  width: 100%;
+}
+
+/* Control panel layout - optimized for larger cards */
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+/* THE CRITICAL GRID - 4 column layout, bigger cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Responsive grid adjustments - no scrolling, optimized for each device */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-width: 350px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .container {
+    padding: 0 30px;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1366px) {
+  /* iPad and tablet sizes (including iPad Pro 13") - much bigger cards */
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 950px;
+  }
+}
+
+@media (min-width: 1367px) {
+  /* Large desktop only - bigger but still no scrolling */
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 900px;
+  }
+}

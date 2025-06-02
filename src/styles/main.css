@@ -1,0 +1,9 @@
+/**
+ * Color Typhoon Game - Main Stylesheet
+ * Clean modular CSS architecture
+ */
+
+@import url("/src/styles/base.css");
+@import url("/src/styles/layout.css");
+@import url("/src/styles/components.css");
+@import url("/src/styles/cards.css");
