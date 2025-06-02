@@ -1,0 +1,9 @@
+services:
+  color-game:
+    build: .
+    ports:
+      - "9080:80"
+    # Disabled volume mount to use files copied during build
+    # volumes:
+    #   - .:/usr/share/nginx/html
+    restart: unless-stopped
